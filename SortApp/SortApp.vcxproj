@@ -11,15 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Driver.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1to10.txt" />
     <Text Include="1to100.txt" />
     <Text Include="1to1000.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Driver.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{87090371-8AFB-4522-AAEB-987D4DFDBDAF}</ProjectGuid>
