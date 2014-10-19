@@ -26,14 +26,14 @@ int main() {
 	threadArray[0] = CreateThread(NULL, 0, frontSort, &args, 0, &threadID[0]);
 	threadArray[1] = CreateThread(NULL, 0, backSort, &args, 0, &threadID[1]);
 
-	//Print the thread IDs and handles, and wait for both threads to finish
-	cout << "Front sort thread ID is " << threadID[0] << " and thread handle is " << threadArray[0] << endl;
-	cout << "Back sort thread ID is " << threadID[1] << " and thread handle is " << threadArray[1] << endl;
+	//Print the list size, and wait for both threads to finish
 	cout << "The list size is " << args.v.size() << " elements." << endl << endl;
 	WaitForMultipleObjects(2, threadArray, true, INFINITE);
 	system("pause");
 
-	//Print the half-sorted, unmerged list
+	//Print the thread IDs, handles, and the half-sorted unmerged list
+	cout << endl << "Front sort thread ID is " << threadID[0] << " and thread handle is " << threadArray[0] << endl;
+	cout << "Back sort thread ID is " << threadID[1] << " and thread handle is " << threadArray[1] << endl;
 	cout << endl << "The list, with the first half and last half sorted but not merged:" << endl;
 	for (int j = 0; j < args.v.size(); j++){
 		cout << args.v.at(j) << endl;
@@ -45,6 +45,7 @@ int main() {
 	WaitForSingleObject(threadArray[2], INFINITE);
 
 	//Print the new sorted list w
+	cout << endl << "Merge sort thread ID is " << threadID[2] << " and thread handle is " << threadArray[2] << endl;
 	cout << endl << "The list, with both halves sorted and merged into one sorted list:" << endl;
 	for (int j = 0; j < args.w.size(); j++){
 		cout << args.w.at(j) << endl;
